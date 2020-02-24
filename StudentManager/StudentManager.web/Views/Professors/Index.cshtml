@@ -1,15 +1,15 @@
-﻿@using System.Activities.Statements
-@model IEnumerable<StudentManager.web.ViewModels.StudentsViewModel>
+﻿@model IEnumerable<StudentManager.web.ViewModels.ProfessorsViewModel>
+
 @{
-    ViewBag.Title = "Students";
+    ViewBag.Title = "Index";
 }
 
-<h2>Students</h2>
+<h2>Professors</h2>
 
 <p>
-    @Html.ActionLink("Create New", "CreateStudent")
+    @Html.ActionLink("Create New", "Create")
 </p>
-<h2>Active students</h2>
+<h2>Active Professors</h2>
 <table class="table">
     <tr>
         <th>
@@ -19,18 +19,14 @@
             @Html.DisplayNameFor(model => model.LastName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Year)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.IsActive)
         </th>
-
         <th>Actions</th>
     </tr>
 
     @foreach (var item in Model)
     {
-        if (item.IsActive == true)
+        if (item.IsActive)
         {
             <tr>
                 <td>
@@ -40,14 +36,11 @@
                     @Html.DisplayFor(modelItem => item.LastName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Year)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.IsActive)
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new {id = item.Id}) |
-                    @Html.ActionLink("Details", "DetailsAsync", new {id = item.Id}) |
+                    @Html.ActionLink("Details", "Details", new {id = item.Id}) |
                     @Html.ActionLink("Delete", "Delete", new {id = item.Id})
                 </td>
             </tr>
@@ -55,7 +48,7 @@
     }
 
 </table>
-<h2>Inactive students</h2>
+<h2>Inactive Professors</h2>
 <table class="table">
     <tr>
         <th>
@@ -65,18 +58,14 @@
             @Html.DisplayNameFor(model => model.LastName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Year)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.IsActive)
         </th>
-
         <th>Actions</th>
     </tr>
 
     @foreach (var item in Model)
     {
-        if (item.IsActive == false)
+        if (!item.IsActive)
         {
             <tr>
                 <td>
@@ -86,15 +75,12 @@
                     @Html.DisplayFor(modelItem => item.LastName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Year)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.IsActive)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "DetailsAsync", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    @Html.ActionLink("Edit", "Edit", new {id = item.Id}) |
+                    @Html.ActionLink("Details", "Details", new {id = item.Id}) |
+                    @Html.ActionLink("Delete", "Delete", new {id = item.Id})
                 </td>
             </tr>
         }

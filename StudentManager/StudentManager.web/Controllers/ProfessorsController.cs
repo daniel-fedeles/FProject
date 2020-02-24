@@ -1,6 +1,7 @@
 ﻿using StudentManager.DomainModels;
 using StudentManager.web.ViewModels;
 using StudentMAnager.DAL;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Threading.Tasks;
@@ -20,57 +21,73 @@ namespace StudentManager.web.Controllers
         public async Task<ActionResult> Index()
         {
             var professorsList = await db.Professors.ToListAsync();
-            var professorsDetailsList = new List<ProfessorDetailsViewModel>();
-            return View();
+            var professorsDetailsList = new List<ProfessorsViewModel>();
+            foreach (var professor in professorsList)
+            {
+                professorsDetailsList.Add(MapToModel(professor));
+            }
+            return View(professorsDetailsList);
         }
 
         // GET: Professors/Details/5
-        public ActionResult Details(int id)
+        public async Task<ActionResult> Details(string id)
         {
-            return View();
+            var professor = await db.Professors.SingleOrDefaultAsync(x => x.Id == id);
+            var model = MapToModelDetails(professor);
+            return View(model);
         }
 
         // GET: Professors/Create
         public ActionResult Create()
         {
-            return View();
+            var model = new ProfessorDetailsViewModel();
+            return View(model);
         }
 
         // POST: Professors/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public async Task<ActionResult> Create(ProfessorDetailsViewModel model)
         {
+            var professor = MapToProfessor(model);
+            professor.Id = Guid.NewGuid().ToString();
+            professor.IsActive = true;
+
             try
             {
-                // TODO: Add insert logic here
+                db.Professors.Add(professor);
+                await db.SaveChangesAsync();
 
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return View("Index");
             }
         }
 
         // GET: Professors/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<ActionResult> Edit(string id)
         {
-            return View();
+            var professor = await db.Professors.SingleOrDefaultAsync(x => x.Id == id);
+            var model = MapToModelDetails(professor);
+            return View(model);
         }
 
         // POST: Professors/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public async Task<ActionResult> Edit(string id, ProfessorDetailsViewModel model)
         {
+            var professor = await db.Professors.SingleOrDefaultAsync(x => x.Id == id);
+            var modify = ModifyProfessorObject(model, professor);
             try
             {
-                // TODO: Add update logic here
+                await db.SaveChangesAsync();
 
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return View("Edit");
             }
         }
 
@@ -132,7 +149,7 @@ namespace StudentManager.web.Controllers
             };
             return model;
         }
-        private Professor MapToStudent(ProfessorDetailsViewModel model)
+        private Professor MapToProfessor(ProfessorDetailsViewModel model)
         {
             var student = new Professor
             {
@@ -151,19 +168,19 @@ namespace StudentManager.web.Controllers
             return student;
         }
 
-        private Student ModifyStudentObject(StudentDetailsViewModel model, Student student)
+        private Professor ModifyProfessorObject(ProfessorDetailsViewModel model, Professor professor)
         {
-            if (student.FirstName != model.FirstName) { student.FirstName = model.FirstName; }
-            if (student.LastName != model.LastName) { student.LastName = model.LastName; }
-            if (student.Email != model.Email) { student.Email = model.Email; }
-            if (student.Year != model.Year) { student.Year = model.Year; }
-            if (student.Country != model.Country) { student.Country = model.Country; }
-            if (student.Address1 != model.Address1) { student.Address1 = model.Address1; }
-            if (student.Address2 != model.Address2) { student.Address2 = model.Address2; }
-            if (student.City != model.City) { student.City = model.City; }
-            if (student.IsActive != model.IsActive) { student.IsActive = model.IsActive; }
+            if (professor.FirstName != model.FirstName) { professor.FirstName = model.FirstName; }
+            if (professor.LastName != model.LastName) { professor.LastName = model.LastName; }
+            if (professor.Email != model.Email) { professor.Email = model.Email; }
+            if (professor.Country != model.Country) { professor.Country = model.Country; }
+            if (professor.Address1 != model.Address1) { professor.Address1 = model.Address1; }
+            if (professor.Address2 != model.Address2) { professor.Address2 = model.Address2; }
+            if (professor.City != model.City) { professor.City = model.City; }
+            if (professor.Courses != model.Courses) { professor.Courses = model.Courses; }
+            if (professor.IsActive != model.IsActive) { professor.IsActive = model.IsActive; }
 
-            return student;
+            return professor;
         }
     }
 }
