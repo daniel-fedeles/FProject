@@ -1,23 +1,25 @@
 ﻿using StudentManager.DomainModels;
+using StudentManager.web.HellperMethods;
 using StudentManager.web.ViewModels;
 using StudentMAnager.DAL;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace StudentManager.web.Controllers
 {
+    [Authorize]
     public class StudentController : Controller
     {
         ApplicationDbContext db;
-
+        private Mappers map;
         public StudentController()
         {
             db = new ApplicationDbContext();
+            map = new Mappers();
         }
         // GET: Student
         public async Task<ActionResult> Index()
@@ -28,7 +30,7 @@ namespace StudentManager.web.Controllers
 
             foreach (var student in studentList)
             {
-                studentsDetailList.Add(MapToModel(student));
+                studentsDetailList.Add(map.MapToStudentModel(student));
             }
             return View(studentsDetailList);
         }
@@ -38,14 +40,20 @@ namespace StudentManager.web.Controllers
         public async Task<ActionResult> DetailsAsync(string id)
         {
             var student = await db.Students.SingleOrDefaultAsync(x => x.Id == id);
-            var model = MapToModelDetails(student);
+            var model = map.MapToModelDetails(student);
             return View(model);
         }
 
         // GET: Student/Create
-        public ActionResult CreateStudent()
+        public async Task<ActionResult> CreateStudent()
         {
-            var model = new StudentDetailsViewModel();
+
+
+            var model = new StudentDetailsViewModel
+            {
+                StudentClasses = await db.Classes.ToListAsync()
+            };
+
             return View(model);
         }
 
@@ -59,7 +67,7 @@ namespace StudentManager.web.Controllers
                 return View(viewModel);
             }
 
-            var student = MapToStudent(model);
+            var student = map.MapToStudent(model);
             student.Id = Guid.NewGuid().ToString();
             student.IsActive = true;
 
@@ -80,7 +88,7 @@ namespace StudentManager.web.Controllers
         public async Task<ActionResult> Edit(string id)
         {
             var student = await db.Students.SingleOrDefaultAsync(x => x.Id == id);
-            var model = MapToModelDetails(student);
+            var model = map.MapToModelDetails(student);
 
             return View(model);
         }
@@ -97,8 +105,7 @@ namespace StudentManager.web.Controllers
                 return View(viewModel);
             }
             var studentDb = await db.Students.SingleOrDefaultAsync(x => x.Id == id);
-            // var model = MapToModelDetails(student);
-            var student = ModifyStudentObject(model, studentDb);
+            var student = map.ModifyStudentObject(model, studentDb);
             try
             {
                 await db.SaveChangesAsync();
@@ -115,8 +122,8 @@ namespace StudentManager.web.Controllers
         public async Task<ActionResult> Delete(string id)
         {
             var studentDb = await db.Students.SingleOrDefaultAsync(x => x.Id == id);
-            var model = MapToModelDetails(studentDb);
-            
+            var model = map.MapToModelDetails(studentDb);
+
             return View(model);
         }
 
@@ -125,7 +132,7 @@ namespace StudentManager.web.Controllers
         public async Task<ActionResult> Delete(string id, StudentDetailsViewModel model)
         {
             db.Students.Remove(db.Students.Single(x => x.Id == id));
-            
+
             try
             {
                 await db.SaveChangesAsync();
@@ -138,80 +145,5 @@ namespace StudentManager.web.Controllers
             }
         }
 
-        private StudentsViewModel MapToModel(Student student)
-        {
-            var model = new StudentsViewModel
-            {
-                Id = student.Id,
-                FirstName = student.FirstName,
-                LastName = student.LastName,
-                Year = student.Year,
-                Email = student.Email,
-                Country = student.Country,
-                Address1 = student.Address1,
-                Address2 = student.Address2,
-                City = student.City,
-                BirthDay = student.BirthDay,
-                IsActive = student.IsActive
-            };
-            return model;
-        }
-        private StudentDetailsViewModel MapToModelDetails(Student student)
-        {
-            var model = new StudentDetailsViewModel
-            {
-                Id = student.Id,
-                FirstName = student.FirstName,
-                LastName = student.LastName,
-                Year = student.Year,
-                Email = student.Email,
-                Country = student.Country,
-                Address1 = student.Address1,
-                Address2 = student.Address2,
-                City = student.City,
-                BirthDay = student.BirthDay,
-                Grades = student.Grades,
-                Courses = student.Courses,
-                StudentClass = student.StudentClass,
-                IsActive = student.IsActive
-            };
-            return model;
-        }
-        private Student MapToStudent(StudentDetailsViewModel model)
-        {
-            var student = new Student
-            {
-                Id = model.Id,
-                FirstName = model.FirstName,
-                LastName = model.LastName,
-                Year = model.Year,
-                Email = model.Email,
-                Country = model.Country,
-                Address1 = model.Address1,
-                Address2 = model.Address2,
-                City = model.City,
-                BirthDay = model.BirthDay,
-                Courses = model.Courses,
-                Grades = model.Grades,
-                StudentClass = model.StudentClass,
-                IsActive = model.IsActive
-            };
-            return student;
-        }
-
-        private Student ModifyStudentObject(StudentDetailsViewModel model, Student student)
-        {
-            if (student.FirstName != model.FirstName) { student.FirstName = model.FirstName; }
-            if (student.LastName != model.LastName) { student.LastName = model.LastName; }
-            if (student.Email != model.Email) { student.Email = model.Email; }
-            if (student.Year != model.Year) { student.Year = model.Year; }
-            if (student.Country != model.Country) { student.Country = model.Country; }
-            if (student.Address1 != model.Address1) { student.Address1 = model.Address1; }
-            if (student.Address2 != model.Address2) { student.Address2 = model.Address2; }
-            if (student.City != model.City) { student.City = model.City; }
-            if (student.IsActive != model.IsActive) { student.IsActive = model.IsActive; }
-
-            return student;
-        }
     }
 }

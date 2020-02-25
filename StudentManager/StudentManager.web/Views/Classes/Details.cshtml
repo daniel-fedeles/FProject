@@ -1,0 +1,93 @@
+﻿@model StudentManager.web.ViewModels.ClassViewModel
+
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>@Model.ClassName</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NrOfStudentsAllocated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NrOfStudentsAllocated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+
+<h4>Students</h4>
+<table class="table">
+    <tr>
+        <th>
+           First Name
+        </th>
+        <th>
+            First Last
+        </th>
+        <th>
+            Year
+        </th>
+        <th>
+            Active
+        </th>
+
+        <th>Actions</th>
+    </tr>
+    @foreach (var item in Model.Students)
+    {
+        if (item.IsActive == true)
+        {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Student", new { id = item.Id }, "") |
+                    @Html.ActionLink("Details", "DetailsAsync", "Student", new { id = item.Id }, "") |
+                    @Html.ActionLink("Delete", "Delete", "Student", new { id = item.Id }, "")
+                </td>
+            </tr>
+
+        }
+    }
+
+</table>

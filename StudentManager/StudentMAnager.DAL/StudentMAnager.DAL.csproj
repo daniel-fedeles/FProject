@@ -58,25 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Migrations\202002181404014_initial.cs" />
-    <Compile Include="Migrations\202002181404014_initial.designer.cs">
-      <DependentUpon>202002181404014_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002181422535_AddedCourses.cs" />
-    <Compile Include="Migrations\202002181422535_AddedCourses.designer.cs">
-      <DependentUpon>202002181422535_AddedCourses.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002211633128_changed.cs" />
-    <Compile Include="Migrations\202002211633128_changed.designer.cs">
-      <DependentUpon>202002211633128_changed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002211635468_addedemail.cs" />
-    <Compile Include="Migrations\202002211635468_addedemail.designer.cs">
-      <DependentUpon>202002211635468_addedemail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002222244198_addedDeleteTypeRefdb.cs" />
-    <Compile Include="Migrations\202002222244198_addedDeleteTypeRefdb.designer.cs">
-      <DependentUpon>202002222244198_addedDeleteTypeRefdb.cs</DependentUpon>
+    <Compile Include="Migrations\202002242222269_initial.cs" />
+    <Compile Include="Migrations\202002242222269_initial.designer.cs">
+      <DependentUpon>202002242222269_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,20 +76,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002181404014_initial.resx">
-      <DependentUpon>202002181404014_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002181422535_AddedCourses.resx">
-      <DependentUpon>202002181422535_AddedCourses.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002211633128_changed.resx">
-      <DependentUpon>202002211633128_changed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002211635468_addedemail.resx">
-      <DependentUpon>202002211635468_addedemail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002222244198_addedDeleteTypeRefdb.resx">
-      <DependentUpon>202002222244198_addedDeleteTypeRefdb.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002242222269_initial.resx">
+      <DependentUpon>202002242222269_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

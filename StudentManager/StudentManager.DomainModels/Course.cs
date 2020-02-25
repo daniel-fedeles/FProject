@@ -5,9 +5,9 @@ namespace StudentManager.DomainModels
     public class Course : Active
     {
 
-        public string CourseId { get; set; }
+        public string Id { get; set; }
 
-        public string CourseName { get; set; }
+        public string Name { get; set; }
 
         public int Year { get; set; }
 

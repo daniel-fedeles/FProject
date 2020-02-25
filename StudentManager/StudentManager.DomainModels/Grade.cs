@@ -4,7 +4,7 @@ namespace StudentManager.DomainModels
 {
     public class Grade
     {
-        public string GradeId { get; set; }
+        public string Id { get; set; }
 
 
         public double Value { get; set; }

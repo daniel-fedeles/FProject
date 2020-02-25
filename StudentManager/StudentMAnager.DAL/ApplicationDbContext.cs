@@ -43,7 +43,7 @@ namespace StudentMAnager.DAL
                      cs.ToTable("ProfessorCourse");
                  });
 
-            modelBuilder.Entity<Grade>().HasKey(g => g.GradeId);
+            modelBuilder.Entity<Grade>().HasKey(g => g.Id);
 
             modelBuilder.Entity<Student>()
                 .HasMany<Grade>(s => s.Grades)
@@ -51,13 +51,13 @@ namespace StudentMAnager.DAL
                 .HasForeignKey(s => s.StudentId);
 
             modelBuilder.Entity<Course>()
-                .HasKey(c => c.CourseId)
+                .HasKey(c => c.Id)
                 .HasMany<Grade>(c => c.Grades)
                 .WithOptional(c => c.Course)
                 .HasForeignKey(c => c.CourseId);
 
             modelBuilder.Entity<StudentClass>()
-                .HasKey(c => c.ClassId)
+                .HasKey(c => c.Id)
                 .HasMany<Student>(c => c.Students)
                 .WithOptional(c => c.StudentClass)
                 .HasForeignKey(c => c.StudentClassId);
