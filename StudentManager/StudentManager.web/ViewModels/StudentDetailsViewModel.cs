@@ -20,5 +20,6 @@ namespace StudentManager.web.ViewModels
         public string StudentClassId { get; set; }
 
         public ICollection<StudentClass> StudentClasses { get; set; }
+        public Course Course { get; set; }
     }
 }

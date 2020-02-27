@@ -1,44 +1,75 @@
-﻿using System;
+﻿using StudentManager.web.HellperMethods;
+using StudentManager.web.ViewModels;
+using StudentMAnager.DAL;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Web;
+using System.Threading.Tasks;
 using System.Web.Mvc;
+
 
 namespace StudentManager.web.Controllers
 {
     public class CoursesController : Controller
     {
-        // GET: Courses
-        public ActionResult Index()
+        private ApplicationDbContext db;
+        private Mappers map;
+
+        public CoursesController()
         {
-            return View();
+            db = ApplicationDbContext.Create();
+            map = new Mappers();
+        }
+        // GET: Courses
+        public async Task<ActionResult> Index()
+        {
+            var courses = await db.Courses.ToListAsync();
+            var modelList = new List<CourseViewModel>();
+            foreach (var course in courses)
+            {
+                modelList.Add(map.MapToCourseModel(course));
+            }
+
+            return View(modelList);
         }
 
         // GET: Courses/Details/5
-        public ActionResult Details(int id)
+        public async Task<ActionResult> Details(string id)
         {
-            return View();
+            var course = await db.Courses
+                .Include(p => p.Professor.Select(prof => prof.Courses))
+                .Include(s => s.Students.Select(stud => stud.Courses))
+                .SingleOrDefaultAsync(x => x.Id == id);
+
+            var model = map.MapToCourseModel(course);
+            return View(model);
         }
 
         // GET: Courses/Create
         public ActionResult Create()
         {
-            return View();
+            var model = new CourseViewModel();
+            return View(model);
         }
 
         // POST: Courses/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public async Task<ActionResult> Create(CourseViewModel model)
         {
+            var course = map.MapToCourse(model);
+            course.Id = Guid.NewGuid().ToString();
+
             try
             {
-                // TODO: Add insert logic here
+                db.Courses.Add(course);
+                await db.SaveChangesAsync();
 
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return View("Error");
             }
         }
 

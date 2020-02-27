@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace StudentManager.DomainModels
 {
@@ -10,6 +11,7 @@ namespace StudentManager.DomainModels
         }
         public string Id { get; set; }
 
+        [DisplayName("Class Name")]
         public string Name { get; set; }
         public ICollection<Student> Students { get; set; }
     }

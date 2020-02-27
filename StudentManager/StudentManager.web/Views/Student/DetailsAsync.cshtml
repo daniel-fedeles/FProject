@@ -82,6 +82,13 @@
             @Html.DisplayFor(model => model.Country)
         </dd>
         <dt>
+            @Html.DisplayNameFor(model => model.StudentClass.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentClass.Name)
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.IsActive)
         </dt>
 
@@ -89,8 +96,46 @@
             @Html.DisplayFor(model => model.IsActive)
         </dd>
     </dl>
+
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+<h4>Courses</h4>
+<table class="table">
+    <tr>
+        <th>
+           Name
+        </th>
+        <th>
+           Year
+        </th>
+        <th>
+            Semester
+        </th>
+        <th>
+            Credits
+            </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Courses) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Semester)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Credits)
+        </td>
+    </tr>
+}
+
+</table>

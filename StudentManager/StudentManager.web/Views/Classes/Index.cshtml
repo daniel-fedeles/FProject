@@ -10,12 +10,12 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <h2>Active classes</h2>
-<table class="table">
+<table class="table table-striped">
     <tr>
-        <th>
+        <th scope="col">
             @Html.DisplayNameFor(model => model.ClassName)
         </th>
-        <th>
+        <th scope="col">
             @Html.DisplayNameFor(model => model.NrOfStudentsAllocated)
         </th>
         <th>Actions</th>
@@ -44,12 +44,12 @@
 
 </table>
 <h2>Inactive classes</h2>
-<table class="table">
+<table class="table table-striped">
     <tr>
-        <th>
+        <th scope="col">
             @Html.DisplayNameFor(model => model.ClassName)
         </th>
-        <th>
+        <th scope="col" >
             @Html.DisplayNameFor(model => model.NrOfStudentsAllocated)
         </th>
         <th>Actions</th>

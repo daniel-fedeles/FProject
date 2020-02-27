@@ -37,7 +37,7 @@ namespace StudentManager.web.Controllers
         public async Task<ActionResult> Details(string id)
         {
             var professor = await db.Professors.SingleOrDefaultAsync(x => x.Id == id);
-            var model = map.MapToModelDetails(professor);
+            var model = map.MapToProfessorModelDetails(professor);
             return View(model);
         }
 
@@ -73,7 +73,7 @@ namespace StudentManager.web.Controllers
         public async Task<ActionResult> Edit(string id)
         {
             var professor = await db.Professors.SingleOrDefaultAsync(x => x.Id == id);
-            var model = map.MapToModelDetails(professor);
+            var model = map.MapToProfessorModelDetails(professor);
             return View(model);
         }
 
@@ -99,7 +99,7 @@ namespace StudentManager.web.Controllers
         public async Task<ActionResult> Delete(string id)
         {
             var professor = await db.Professors.SingleOrDefaultAsync(x => x.Id == id);
-            var model = map.MapToModelDetails(professor);
+            var model = map.MapToProfessorModelDetails(professor);
             return View(model);
         }
 

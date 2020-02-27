@@ -1,5 +1,7 @@
 ﻿using StudentManager.DomainModels;
 using StudentManager.web.ViewModels;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace StudentManager.web.HellperMethods
 {
@@ -23,7 +25,7 @@ namespace StudentManager.web.HellperMethods
             };
             return model;
         }
-        public StudentDetailsViewModel MapToModelDetails(Student student)
+        public StudentDetailsViewModel MapToStudentModelDetails(Student student)
         {
             var model = new StudentDetailsViewModel();
             model.Id = student.Id;
@@ -40,6 +42,8 @@ namespace StudentManager.web.HellperMethods
             model.Courses = student.Courses;
             model.StudentClassId = student.StudentClassId;
             model.IsActive = student.IsActive;
+            if (student.StudentClass != null) model.StudentClass = student.StudentClass;
+            if (student.Courses != null) model.Courses = student.Courses;
             return model;
         }
         public Student MapToStudent(StudentDetailsViewModel model)
@@ -62,6 +66,23 @@ namespace StudentManager.web.HellperMethods
 
             return student;
         }
+        public Student MapToStudent(StudentsViewModel model)
+        {
+            var student = new Student();
+            student.Id = model.Id;
+            student.FirstName = model.FirstName;
+            student.LastName = model.LastName;
+            student.Year = model.Year;
+            student.Email = model.Email;
+            student.Country = model.Country;
+            student.Address1 = model.Address1;
+            student.Address2 = model.Address2;
+            student.City = model.City;
+            student.BirthDay = model.BirthDay;
+            student.IsActive = model.IsActive;
+
+            return student;
+        }
 
         public Student ModifyStudentObject(StudentDetailsViewModel model, Student student)
         {
@@ -75,6 +96,7 @@ namespace StudentManager.web.HellperMethods
             if (student.Address2 != model.Address2) { student.Address2 = model.Address2; }
             if (student.City != model.City) { student.City = model.City; }
             if (student.IsActive != model.IsActive) { student.IsActive = model.IsActive; }
+            if (student.StudentClassId != model.StudentClassId) { student.StudentClassId = model.StudentClassId; }
 
             return student;
         }
@@ -97,7 +119,7 @@ namespace StudentManager.web.HellperMethods
             };
             return model;
         }
-        public ProfessorDetailsViewModel MapToModelDetails(Professor professor)
+        public ProfessorDetailsViewModel MapToProfessorModelDetails(Professor professor)
         {
             var model = new ProfessorDetailsViewModel
             {
@@ -117,7 +139,7 @@ namespace StudentManager.web.HellperMethods
         }
         public Professor MapToProfessor(ProfessorDetailsViewModel model)
         {
-            var student = new Professor
+            var professor = new Professor
             {
                 Id = model.Id,
                 FirstName = model.FirstName,
@@ -131,7 +153,24 @@ namespace StudentManager.web.HellperMethods
                 Courses = model.Courses,
                 IsActive = model.IsActive
             };
-            return student;
+            return professor;
+        }
+        public Professor MapToProfessor(ProfessorsViewModel model)
+        {
+            var professor = new Professor
+            {
+                Id = model.Id,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Email = model.Email,
+                Country = model.Country,
+                Address1 = model.Address1,
+                Address2 = model.Address2,
+                City = model.City,
+                BirthDay = model.BirthDay,
+                IsActive = model.IsActive
+            };
+            return professor;
         }
 
         public Professor ModifyProfessorObject(ProfessorDetailsViewModel model, Professor professor)
@@ -149,5 +188,72 @@ namespace StudentManager.web.HellperMethods
 
             return professor;
         }
+
+        public CourseViewModel MapToCourseModel(Course course)
+        {
+            var model = new CourseViewModel();
+            model.Id = course.Id;
+            model.Name = course.Name;
+            model.Semester = course.Semester;
+            model.Year = course.Year;
+            model.Credits = course.Credits;
+            if (course.Grades != null) model.Grades = course.Grades;
+            if (course.Students != null) model.Students = StudentsModels(course.Students.ToList());
+            if (course.Professor != null) model.Professor = ProfessorModels(course.Professor.ToList());
+            return model;
+        }
+
+        public Course MapToCourse(CourseViewModel course)
+        {
+            var model = new Course();
+            model.Id = course.Id;
+            model.Name = course.Name;
+            model.Semester = course.Semester;
+            model.Year = course.Year;
+            model.Credits = course.Credits;
+            return model;
+        }
+
+        public List<StudentsViewModel> StudentsModels(List<Student> students)
+        {
+            List<StudentsViewModel> models = new List<StudentsViewModel>();
+            foreach (var student in students)
+            {
+                models.Add(MapToStudentModel(student));
+            }
+
+            return models;
+        }
+        public List<ProfessorsViewModel> ProfessorModels(List<Professor> professors)
+        {
+            List<ProfessorsViewModel> models = new List<ProfessorsViewModel>();
+            foreach (var professor in professors)
+            {
+                models.Add(MapToProfessorModel(professor));
+            }
+
+            return models;
+        }
+        public List<Student> ModelsToStudents(List<StudentsViewModel> models)
+        {
+            List<Student> students = new List<Student>();
+            foreach (var model in models)
+            {
+                students.Add(MapToStudent(model));
+            }
+
+            return students;
+        }
+        public List<Professor> ModelsToPofessors(List<ProfessorsViewModel> models)
+        {
+            List<Professor> professors = new List<Professor>();
+            foreach (var model in models)
+            {
+                professors.Add(MapToProfessor(model));
+            }
+
+            return professors;
+        }
+
     }
 }

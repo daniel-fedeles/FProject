@@ -43,7 +43,7 @@ namespace StudentMAnager.DAL
                      cs.ToTable("ProfessorCourse");
                  });
 
-            modelBuilder.Entity<Grade>().HasKey(g => g.Id);
+
 
             modelBuilder.Entity<Student>()
                 .HasMany<Grade>(s => s.Grades)
@@ -62,6 +62,7 @@ namespace StudentMAnager.DAL
                 .WithOptional(c => c.StudentClass)
                 .HasForeignKey(c => c.StudentClassId);
 
+            modelBuilder.Entity<Grade>().HasKey(g => g.Id);
 
             base.OnModelCreating(modelBuilder);
         }
