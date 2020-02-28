@@ -7,7 +7,7 @@
 <h2>All classes</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", "Classes","", new{@class="btn btn-default"})
 </p>
 <h2>Active classes</h2>
 <table class="table table-striped">
@@ -33,9 +33,9 @@
                     @Html.DisplayFor(modelItem => item.NrOfStudentsAllocated)
                 </td>
 
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                <td class="btn-group">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new{@class="btn btn-default"}) 
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new{@class="btn btn-default"}) 
                 </td>
             </tr>
         }
@@ -67,9 +67,9 @@
                     @Html.DisplayFor(modelItem => item.NrOfStudentsAllocated)
                 </td>
 
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                <td class="btn-group">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new{@class="btn btn-default"})
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new{@class="btn btn-default"}) 
                 </td>
             </tr>
         }

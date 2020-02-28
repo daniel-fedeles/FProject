@@ -10,37 +10,24 @@
 <div>
     <h4>@Model.ClassName</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <div class="row">
+        <div class="col-sm-4 text-righ" >@Html.DisplayNameFor(model => model.ClassName)</div>
+        <div class="col-sm-8" >@Html.DisplayFor(model => model.ClassName)</div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ClassName)
-        </dt>
+        <div class="col-sm-4 text-righ" >@Html.DisplayNameFor(model => model.NrOfStudentsAllocated)</div>
+        <div class="col-sm-8" >@Html.DisplayFor(model => model.NrOfStudentsAllocated)</div>
 
-        <dd>
-            @Html.DisplayFor(model => model.ClassName)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NrOfStudentsAllocated)
-        </dt>
+        <div class="col-sm-4 text-righ" >@Html.DisplayNameFor(model => model.IsActive)</div>
+        <div class="col-sm-8" >@Html.DisplayFor(model => model.IsActive)</div>
 
-        <dd>
-            @Html.DisplayFor(model => model.NrOfStudentsAllocated)
-        </dd>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsActive)
-        </dd>
-
-    </dl>
+    
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+<p class="btn-group">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id },new{@class="btn btn-default"})
+    @Html.ActionLink("Back to List", "Index","Classes", "", new{@class="btn btn-default"})
 </p>
 
 
@@ -80,10 +67,11 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.IsActive)
                 </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", "Student", new { id = item.Id }, "") |
-                    @Html.ActionLink("Details", "DetailsAsync", "Student", new { id = item.Id }, "") |
-                    @Html.ActionLink("Delete", "Delete", "Student", new { id = item.Id }, "")
+                <td class="btn-group">
+                    
+                    @Html.ActionLink("Edit", "Edit", "Student", new {id = item.Id}, new {@class = "btn btn-default"})
+                    @Html.ActionLink("Details", "DetailsAsync", "Student", new {id = item.Id}, new {@class = "btn btn-default"})
+                    @Html.ActionLink("Delete", "Delete", "Student", new {id = item.Id}, new {@class = "btn btn-default"})
                 </td>
             </tr>
 

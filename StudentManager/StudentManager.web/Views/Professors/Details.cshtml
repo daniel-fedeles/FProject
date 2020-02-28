@@ -9,82 +9,42 @@
 <div>
     <h4>ProfessorDetailsViewModel</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
+    <div class="row">
+        <div class="col-sm-4 text-righ"> @Html.DisplayNameFor(model => model.FirstName)</div>
+        <div class="col-sm-8">@Html.DisplayFor(model => model.FirstName)</div>
 
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
+        <div class="col-sm-4 text-righ">@Html.DisplayNameFor(model => model.LastName)</div>
+        <div class="col-sm-8">@Html.DisplayFor(model => model.LastName)</div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
+        <div class="col-sm-4 text-righ">@Html.DisplayNameFor(model => model.Email)</div>
+        <div class="col-sm-8">@Html.DisplayFor(model => model.Email)</div>
 
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
+        <div class="col-sm-4 text-righ">@Html.DisplayNameFor(model => model.BirthDay)</div>
+        <div class="col-sm-8">@Html.DisplayFor(model => model.BirthDay)</div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+        <div class="col-sm-4 text-righ">@Html.DisplayNameFor(model => model.Address1)</div>
+        <div class="col-sm-8">@Html.DisplayFor(model => model.Address1)</div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BirthDay)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.BirthDay)
-        </dd>
+        <div class="col-sm-4 text-righ">@Html.DisplayNameFor(model => model.Address2)</div>
+        <div class="col-sm-8">@Html.DisplayFor(model => model.Address2)</div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Address1)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Address1)
-        </dd>
+        <div class="col-sm-4 text-righ">@Html.DisplayNameFor(model => model.City)</div>
+        <div class="col-sm-8">@Html.DisplayFor(model => model.City)</div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Address2)
-        </dt>
+        <div class="col-sm-4 text-righ">@Html.DisplayNameFor(model => model.Country)</div>
+        <div class="col-sm-8">@Html.DisplayFor(model => model.Country)</div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Address2)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.City)
-        </dt>
+        <div class="col-sm-4 text-righ">@Html.DisplayNameFor(model => model.IsActive)</div>
+        <div class="col-sm-8">@Html.DisplayFor(model => model.IsActive)</div>
 
-        <dd>
-            @Html.DisplayFor(model => model.City)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Country)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Country)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsActive)
-        </dd>
-
-    </dl>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+<p class="btn-group">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new{@class="btn btn-default"})
+    @Html.ActionLink("Back to List", "Index", "Professors", "", new{@class="btn btn-default"})
 </p>

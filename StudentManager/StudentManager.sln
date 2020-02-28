@@ -15,6 +15,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentMAnager.DAL", "Stude
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManager.DomainModels", "StudentManager.DomainModels\StudentManager.DomainModels.csproj", "{A512BD0D-A07C-4404-AC6A-3FA616D322CE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Screenshots", "Screenshots", "{37EB9F8F-96AF-48BE-BFB4-1DC7E12455BA}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Documents\Lightshot\Screenshot_18.png = ..\..\..\..\Documents\Lightshot\Screenshot_18.png
+		..\..\..\..\Documents\Lightshot\Screenshot_19.png = ..\..\..\..\Documents\Lightshot\Screenshot_19.png
+		..\..\..\..\Documents\Lightshot\Screenshot_20.png = ..\..\..\..\Documents\Lightshot\Screenshot_20.png
+		..\..\..\..\Documents\Lightshot\Screenshot_21.png = ..\..\..\..\Documents\Lightshot\Screenshot_21.png
+		..\..\..\..\Documents\Lightshot\Screenshot_22.png = ..\..\..\..\Documents\Lightshot\Screenshot_22.png
+		..\..\..\..\Documents\Lightshot\Screenshot_23.png = ..\..\..\..\Documents\Lightshot\Screenshot_23.png
+		..\..\..\..\Documents\Lightshot\Screenshot_24.png = ..\..\..\..\Documents\Lightshot\Screenshot_24.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
