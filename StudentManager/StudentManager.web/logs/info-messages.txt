@@ -5276,4 +5276,537 @@
 ]                          
  StackTrace: StudentManager.web.Controllers.StudentController+<Index>d__4.MoveNext                                                  
                           
+                                                    
+                          
+ DateAndTime: 2020-02-28 16:23:57,767                           
+ Thread: [65]                           
+ Level: INFO                            
+ Logger: StudentManager.web.Controllers.StudentController                           
+ Identity: [admin@admin.com]                            
+ Message: [
+  {
+    "Year": 1,
+    "Id": "807251f5-bc69-4d10-8b15-0a62f98b2016",
+    "FirstName": "Popescu",
+    "LastName": "Ionut",
+    "Email": "ionut.popescu@gmail.com",
+    "BirthDay": "2006-01-24T00:00:00",
+    "Address1": "Iasi",
+    "Address2": "Merilor 25",
+    "City": "Iasi",
+    "Country": "Romania",
+    "IsActive": true
+  },
+  {
+    "Year": 1,
+    "Id": "c421492c-d426-4657-b3aa-af44ef4ff9d1",
+    "FirstName": "Stan",
+    "LastName": "Alex",
+    "Email": "alex.stan@gmail.com",
+    "BirthDay": "1995-01-01T00:00:00",
+    "Address1": "Iasi",
+    "Address2": "Bazei 2.2.p",
+    "City": "Iasi",
+    "Country": "Romania",
+    "IsActive": true
+  }
+]                          
+ StackTrace: StudentManager.web.Controllers.StudentController+<Index>d__4.MoveNext                                                  
+                          
+                                                    
+                          
+ DateAndTime: 2020-02-28 16:24:07,650                           
+ Thread: [62]                           
+ Level: INFO                            
+ Logger: StudentManager.web.Controllers.StudentController                           
+ Identity: [admin@admin.com]                            
+ Message: {
+  "Year": 1,
+  "Courses": [
+    {
+      "Id": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+      "Name": "Math",
+      "Year": 1,
+      "Semester": 2,
+      "Credits": 5,
+      "Students": [
+        {
+          "Year": 1,
+          "Grades": [
+            {
+              "Id": "ef832386-1128-4ca3-b154-e2a2357c7a63",
+              "Value": 8.0,
+              "DateNote": "2020-02-28T00:00:00",
+              "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+              "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016"
+            },
+            {
+              "Id": "ef832386-1128-4ca3-b154-e2a2357c7a69",
+              "Value": 9.5,
+              "DateNote": "2020-02-28T00:00:00",
+              "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+              "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016"
+            }
+          ],
+          "StudentClass": {
+            "Id": "d5e16708-9d5a-4e4b-9111-0f42215c576f",
+            "Name": "Group A1",
+            "Students": [],
+            "IsActive": true
+          },
+          "StudentClassId": "d5e16708-9d5a-4e4b-9111-0f42215c576f",
+          "Id": "807251f5-bc69-4d10-8b15-0a62f98b2016",
+          "FirstName": "Popescu",
+          "LastName": "Ionut",
+          "Email": "ionut.popescu@gmail.com",
+          "BirthDay": "2006-01-24T00:00:00",
+          "Address1": "Iasi",
+          "Address2": "Merilor 25",
+          "City": "Iasi",
+          "Country": "Romania",
+          "IsActive": true
+        }
+      ],
+      "Professor": null,
+      "Grades": [
+        {
+          "Id": "ef832386-1128-4ca3-b154-e2a2357c7a63",
+          "Value": 8.0,
+          "DateNote": "2020-02-28T00:00:00",
+          "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+          "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016",
+          "Student": {
+            "Year": 1,
+            "Grades": [
+              {
+                "Id": "ef832386-1128-4ca3-b154-e2a2357c7a69",
+                "Value": 9.5,
+                "DateNote": "2020-02-28T00:00:00",
+                "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+                "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016"
+              }
+            ],
+            "StudentClass": {
+              "Id": "d5e16708-9d5a-4e4b-9111-0f42215c576f",
+              "Name": "Group A1",
+              "Students": [],
+              "IsActive": true
+            },
+            "StudentClassId": "d5e16708-9d5a-4e4b-9111-0f42215c576f",
+            "Id": "807251f5-bc69-4d10-8b15-0a62f98b2016",
+            "FirstName": "Popescu",
+            "LastName": "Ionut",
+            "Email": "ionut.popescu@gmail.com",
+            "BirthDay": "2006-01-24T00:00:00",
+            "Address1": "Iasi",
+            "Address2": "Merilor 25",
+            "City": "Iasi",
+            "Country": "Romania",
+            "IsActive": true
+          }
+        },
+        {
+          "Id": "ef832386-1128-4ca3-b154-e2a2357c7a69",
+          "Value": 9.5,
+          "DateNote": "2020-02-28T00:00:00",
+          "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+          "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016",
+          "Student": {
+            "Year": 1,
+            "Grades": [
+              {
+                "Id": "ef832386-1128-4ca3-b154-e2a2357c7a63",
+                "Value": 8.0,
+                "DateNote": "2020-02-28T00:00:00",
+                "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+                "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016"
+              }
+            ],
+            "StudentClass": {
+              "Id": "d5e16708-9d5a-4e4b-9111-0f42215c576f",
+              "Name": "Group A1",
+              "Students": [],
+              "IsActive": true
+            },
+            "StudentClassId": "d5e16708-9d5a-4e4b-9111-0f42215c576f",
+            "Id": "807251f5-bc69-4d10-8b15-0a62f98b2016",
+            "FirstName": "Popescu",
+            "LastName": "Ionut",
+            "Email": "ionut.popescu@gmail.com",
+            "BirthDay": "2006-01-24T00:00:00",
+            "Address1": "Iasi",
+            "Address2": "Merilor 25",
+            "City": "Iasi",
+            "Country": "Romania",
+            "IsActive": true
+          }
+        }
+      ],
+      "IsActive": true
+    }
+  ],
+  "Grades": null,
+  "StudentClass": {
+    "Id": "d5e16708-9d5a-4e4b-9111-0f42215c576f",
+    "Name": "Group A1",
+    "Students": [
+      {
+        "Year": 1,
+        "Courses": [
+          {
+            "Id": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+            "Name": "Math",
+            "Year": 1,
+            "Semester": 2,
+            "Credits": 5,
+            "Students": [],
+            "Professor": null,
+            "Grades": [
+              {
+                "Id": "ef832386-1128-4ca3-b154-e2a2357c7a63",
+                "Value": 8.0,
+                "DateNote": "2020-02-28T00:00:00",
+                "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+                "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016"
+              },
+              {
+                "Id": "ef832386-1128-4ca3-b154-e2a2357c7a69",
+                "Value": 9.5,
+                "DateNote": "2020-02-28T00:00:00",
+                "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+                "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016"
+              }
+            ],
+            "IsActive": true
+          }
+        ],
+        "Grades": [
+          {
+            "Id": "ef832386-1128-4ca3-b154-e2a2357c7a63",
+            "Value": 8.0,
+            "DateNote": "2020-02-28T00:00:00",
+            "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+            "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016",
+            "Course": {
+              "Id": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+              "Name": "Math",
+              "Year": 1,
+              "Semester": 2,
+              "Credits": 5,
+              "Students": [],
+              "Professor": null,
+              "Grades": [
+                {
+                  "Id": "ef832386-1128-4ca3-b154-e2a2357c7a69",
+                  "Value": 9.5,
+                  "DateNote": "2020-02-28T00:00:00",
+                  "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+                  "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016"
+                }
+              ],
+              "IsActive": true
+            }
+          },
+          {
+            "Id": "ef832386-1128-4ca3-b154-e2a2357c7a69",
+            "Value": 9.5,
+            "DateNote": "2020-02-28T00:00:00",
+            "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+            "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016",
+            "Course": {
+              "Id": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+              "Name": "Math",
+              "Year": 1,
+              "Semester": 2,
+              "Credits": 5,
+              "Students": [],
+              "Professor": null,
+              "Grades": [
+                {
+                  "Id": "ef832386-1128-4ca3-b154-e2a2357c7a63",
+                  "Value": 8.0,
+                  "DateNote": "2020-02-28T00:00:00",
+                  "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+                  "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016"
+                }
+              ],
+              "IsActive": true
+            }
+          }
+        ],
+        "StudentClassId": "d5e16708-9d5a-4e4b-9111-0f42215c576f",
+        "Id": "807251f5-bc69-4d10-8b15-0a62f98b2016",
+        "FirstName": "Popescu",
+        "LastName": "Ionut",
+        "Email": "ionut.popescu@gmail.com",
+        "BirthDay": "2006-01-24T00:00:00",
+        "Address1": "Iasi",
+        "Address2": "Merilor 25",
+        "City": "Iasi",
+        "Country": "Romania",
+        "IsActive": true
+      }
+    ],
+    "IsActive": true
+  },
+  "StudentClassId": "d5e16708-9d5a-4e4b-9111-0f42215c576f",
+  "StudentClasses": [],
+  "Course": null,
+  "Id": "807251f5-bc69-4d10-8b15-0a62f98b2016",
+  "FirstName": "Popescu",
+  "LastName": "Ionut",
+  "Email": "ionut.popescu@gmail.com",
+  "BirthDay": "2006-01-24T00:00:00",
+  "Address1": "Iasi",
+  "Address2": "Merilor 25",
+  "City": "Iasi",
+  "Country": "Romania",
+  "IsActive": true
+}                          
+ StackTrace: StudentManager.web.Controllers.StudentController+<DetailsAsync>d__5.MoveNext                                                  
+                          
+                                                    
+                          
+ DateAndTime: 2020-02-28 16:24:07,651                           
+ Thread: [62]                           
+ Level: INFO                            
+ Logger: StudentManager.web.Controllers.StudentController                           
+ Identity: [admin@admin.com]                            
+ Message: [
+  {
+    "Id": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+    "Name": "Math",
+    "Year": 1,
+    "Semester": 2,
+    "Credits": 5,
+    "Students": [
+      {
+        "Year": 1,
+        "Grades": [
+          {
+            "Id": "ef832386-1128-4ca3-b154-e2a2357c7a63",
+            "Value": 8.0,
+            "DateNote": "2020-02-28T00:00:00",
+            "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+            "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016"
+          },
+          {
+            "Id": "ef832386-1128-4ca3-b154-e2a2357c7a69",
+            "Value": 9.5,
+            "DateNote": "2020-02-28T00:00:00",
+            "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+            "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016"
+          }
+        ],
+        "StudentClass": {
+          "Id": "d5e16708-9d5a-4e4b-9111-0f42215c576f",
+          "Name": "Group A1",
+          "Students": [],
+          "IsActive": true
+        },
+        "StudentClassId": "d5e16708-9d5a-4e4b-9111-0f42215c576f",
+        "Id": "807251f5-bc69-4d10-8b15-0a62f98b2016",
+        "FirstName": "Popescu",
+        "LastName": "Ionut",
+        "Email": "ionut.popescu@gmail.com",
+        "BirthDay": "2006-01-24T00:00:00",
+        "Address1": "Iasi",
+        "Address2": "Merilor 25",
+        "City": "Iasi",
+        "Country": "Romania",
+        "IsActive": true
+      }
+    ],
+    "Professor": null,
+    "Grades": [
+      {
+        "Id": "ef832386-1128-4ca3-b154-e2a2357c7a63",
+        "Value": 8.0,
+        "DateNote": "2020-02-28T00:00:00",
+        "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+        "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016",
+        "Student": {
+          "Year": 1,
+          "Grades": [
+            {
+              "Id": "ef832386-1128-4ca3-b154-e2a2357c7a69",
+              "Value": 9.5,
+              "DateNote": "2020-02-28T00:00:00",
+              "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+              "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016"
+            }
+          ],
+          "StudentClass": {
+            "Id": "d5e16708-9d5a-4e4b-9111-0f42215c576f",
+            "Name": "Group A1",
+            "Students": [],
+            "IsActive": true
+          },
+          "StudentClassId": "d5e16708-9d5a-4e4b-9111-0f42215c576f",
+          "Id": "807251f5-bc69-4d10-8b15-0a62f98b2016",
+          "FirstName": "Popescu",
+          "LastName": "Ionut",
+          "Email": "ionut.popescu@gmail.com",
+          "BirthDay": "2006-01-24T00:00:00",
+          "Address1": "Iasi",
+          "Address2": "Merilor 25",
+          "City": "Iasi",
+          "Country": "Romania",
+          "IsActive": true
+        }
+      },
+      {
+        "Id": "ef832386-1128-4ca3-b154-e2a2357c7a69",
+        "Value": 9.5,
+        "DateNote": "2020-02-28T00:00:00",
+        "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+        "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016",
+        "Student": {
+          "Year": 1,
+          "Grades": [
+            {
+              "Id": "ef832386-1128-4ca3-b154-e2a2357c7a63",
+              "Value": 8.0,
+              "DateNote": "2020-02-28T00:00:00",
+              "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+              "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016"
+            }
+          ],
+          "StudentClass": {
+            "Id": "d5e16708-9d5a-4e4b-9111-0f42215c576f",
+            "Name": "Group A1",
+            "Students": [],
+            "IsActive": true
+          },
+          "StudentClassId": "d5e16708-9d5a-4e4b-9111-0f42215c576f",
+          "Id": "807251f5-bc69-4d10-8b15-0a62f98b2016",
+          "FirstName": "Popescu",
+          "LastName": "Ionut",
+          "Email": "ionut.popescu@gmail.com",
+          "BirthDay": "2006-01-24T00:00:00",
+          "Address1": "Iasi",
+          "Address2": "Merilor 25",
+          "City": "Iasi",
+          "Country": "Romania",
+          "IsActive": true
+        }
+      }
+    ],
+    "IsActive": true
+  }
+]                          
+ StackTrace: StudentManager.web.Controllers.StudentController+<DetailsAsync>d__5.MoveNext                                                  
+                          
+                                                    
+                          
+ DateAndTime: 2020-02-28 16:24:07,651                           
+ Thread: [62]                           
+ Level: INFO                            
+ Logger: StudentManager.web.Controllers.StudentController                           
+ Identity: [admin@admin.com]                            
+ Message: {
+  "Id": "d5e16708-9d5a-4e4b-9111-0f42215c576f",
+  "Name": "Group A1",
+  "Students": [
+    {
+      "Year": 1,
+      "Courses": [
+        {
+          "Id": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+          "Name": "Math",
+          "Year": 1,
+          "Semester": 2,
+          "Credits": 5,
+          "Students": [],
+          "Professor": null,
+          "Grades": [
+            {
+              "Id": "ef832386-1128-4ca3-b154-e2a2357c7a63",
+              "Value": 8.0,
+              "DateNote": "2020-02-28T00:00:00",
+              "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+              "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016"
+            },
+            {
+              "Id": "ef832386-1128-4ca3-b154-e2a2357c7a69",
+              "Value": 9.5,
+              "DateNote": "2020-02-28T00:00:00",
+              "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+              "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016"
+            }
+          ],
+          "IsActive": true
+        }
+      ],
+      "Grades": [
+        {
+          "Id": "ef832386-1128-4ca3-b154-e2a2357c7a63",
+          "Value": 8.0,
+          "DateNote": "2020-02-28T00:00:00",
+          "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+          "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016",
+          "Course": {
+            "Id": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+            "Name": "Math",
+            "Year": 1,
+            "Semester": 2,
+            "Credits": 5,
+            "Students": [],
+            "Professor": null,
+            "Grades": [
+              {
+                "Id": "ef832386-1128-4ca3-b154-e2a2357c7a69",
+                "Value": 9.5,
+                "DateNote": "2020-02-28T00:00:00",
+                "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+                "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016"
+              }
+            ],
+            "IsActive": true
+          }
+        },
+        {
+          "Id": "ef832386-1128-4ca3-b154-e2a2357c7a69",
+          "Value": 9.5,
+          "DateNote": "2020-02-28T00:00:00",
+          "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+          "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016",
+          "Course": {
+            "Id": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+            "Name": "Math",
+            "Year": 1,
+            "Semester": 2,
+            "Credits": 5,
+            "Students": [],
+            "Professor": null,
+            "Grades": [
+              {
+                "Id": "ef832386-1128-4ca3-b154-e2a2357c7a63",
+                "Value": 8.0,
+                "DateNote": "2020-02-28T00:00:00",
+                "CourseId": "02001a52-b97e-4b82-ad4b-77abd6a1ed1f",
+                "StudentId": "807251f5-bc69-4d10-8b15-0a62f98b2016"
+              }
+            ],
+            "IsActive": true
+          }
+        }
+      ],
+      "StudentClassId": "d5e16708-9d5a-4e4b-9111-0f42215c576f",
+      "Id": "807251f5-bc69-4d10-8b15-0a62f98b2016",
+      "FirstName": "Popescu",
+      "LastName": "Ionut",
+      "Email": "ionut.popescu@gmail.com",
+      "BirthDay": "2006-01-24T00:00:00",
+      "Address1": "Iasi",
+      "Address2": "Merilor 25",
+      "City": "Iasi",
+      "Country": "Romania",
+      "IsActive": true
+    }
+  ],
+  "IsActive": true
+}                          
+ StackTrace: StudentManager.web.Controllers.StudentController+<DetailsAsync>d__5.MoveNext                                                  
+                          
                           
