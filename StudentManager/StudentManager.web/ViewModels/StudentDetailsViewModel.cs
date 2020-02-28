@@ -9,12 +9,14 @@ namespace StudentManager.web.ViewModels
         public StudentDetailsViewModel()
         {
             StudentClasses = new List<StudentClass>();
+            Courses = new List<Course>();
+            Grades = new List<Grade>();
         }
         public int Year { get; set; }
         public ICollection<Course> Courses { get; set; }
         public ICollection<Grade> Grades { get; set; }
 
-        [DisplayName("Class")]
+        [DisplayName("Group")]
         public StudentClass StudentClass { get; set; }
 
         public string StudentClassId { get; set; }

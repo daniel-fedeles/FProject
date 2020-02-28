@@ -50,6 +50,11 @@ namespace StudentManager.web.Controllers
                 .SingleOrDefaultAsync(x => x.Id == id);
             var model = map.MapToStudentModelDetails(student);
             // model.StudentClass = await db.Classes.SingleOrDefaultAsync(x => x.Id == student.StudentClassId);
+
+
+            var grades = await db.Grades.ToListAsync();
+
+
             _log.Info(JsonConvert.SerializeObject(model));
             _log.Info(JsonConvert.SerializeObject(model.Courses));
             _log.Info(JsonConvert.SerializeObject(model.StudentClass));

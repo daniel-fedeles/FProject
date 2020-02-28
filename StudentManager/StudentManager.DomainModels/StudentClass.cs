@@ -11,7 +11,7 @@ namespace StudentManager.DomainModels
         }
         public string Id { get; set; }
 
-        [DisplayName("Class Name")]
+        [DisplayName("Group")]
         public string Name { get; set; }
         public ICollection<Student> Students { get; set; }
     }

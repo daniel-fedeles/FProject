@@ -35,15 +35,12 @@ textarea {
 .navbar-brand {
     font-size: 20px;
     font-weight: bolder;
-    font-family: cursive;
+    font-family: initial;
 }
 a {
     color: black;
     text-decoration: none;
-    font-family: cursive;
-}
-a:hover {
-    border-radius: 10px;
+    font-family: initial;
 }
 .jumbotron {
     border-color: aqua;
@@ -58,12 +55,12 @@ navbar-nav {
 
 .navbar-custom .navbar-nav > li > a:hover,
 .navbar-custom .navbar-nav > li > a:focus {
-    color: darkgreen;
+    color: white;
     background-color: cadetblue;
 }
 dt {
     font-size: 18px;
-    font-family: cursive;
+    font-family: initial;
     font-weight: 300;
     color: black;
 }
@@ -72,7 +69,7 @@ dt {
 }
 .row {
     font-size: 16px;
-    font-family: cursive;
+    font-family: initial;
     margin-bottom: 50px;
     margin-top: 50px;
 }

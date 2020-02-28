@@ -8,7 +8,7 @@
 
 <div>
     <h4>@Model.FirstName @Model.LastName Details </h4>
-    <hr />
+    <hr/>
     <div class="row">
         <div class="col-sm-4 text-righ"> @Html.DisplayNameFor(model => model.FirstName)</div>
         <div class="col-sm-8">@Html.DisplayFor(model => model.FirstName)</div>
@@ -54,43 +54,56 @@
 
 </div>
 <p class="btn-group">
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new{@class="btn btn-default"})
-    @Html.ActionLink("Back to List", "Index","Student", "",new{@class="btn btn-default"})
+    @Html.ActionLink("Edit", "Edit", new {id = Model.Id}, new {@class = "btn btn-default"})
+    @Html.ActionLink("Back to List", "Index", "Student", "", new {@class = "btn btn-default"})
 </p>
 <h4>Courses</h4>
-<table class="table">
+<table class="table table-bordered table-hover">
     <tr>
         <th>
-           Name
+            Name
         </th>
         <th>
-           Year
+            Year
         </th>
         <th>
             Semester
         </th>
         <th>
             Credits
-            </th>
+        </th>
 
-        <th></th>
+        <th>
+            Grades
+        </th>
     </tr>
 
-@foreach (var item in Model.Courses) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Year)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Semester)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Credits)
-        </td>
-    </tr>
-}
+    @foreach (var item in Model.Courses)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Semester)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Credits)
+            </td>
+            <td>
+                @foreach (var x in item.Grades)
+                {
+
+
+                    @Html.DisplayFor(modelItem => x.Value) @:&nbsp; &nbsp; &nbsp;
+
+                }
+
+            </td>
+        </tr>
+    }
 
 </table>

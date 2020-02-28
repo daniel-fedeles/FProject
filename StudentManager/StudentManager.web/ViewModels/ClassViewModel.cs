@@ -11,7 +11,7 @@ namespace StudentManager.web.ViewModels
         }
         public string Id { get; set; }
 
-        [DisplayName("Class Name")]
+        [DisplayName("Group")]
         public string ClassName { get; set; }
 
         [DisplayName("Number of students")]

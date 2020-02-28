@@ -30,14 +30,14 @@ namespace StudentMAnager.DAL.Migrations
             {
                 IsActive = active,
                 Id = classId,
-                Name = "Clasa A"
+                Name = "Group A1"
             };
             var course = new Course
             {
                 Year = 1,
                 IsActive = active,
                 Id = courseId,
-                Name = "Ceva",
+                Name = "Math",
                 Credits = 5,
                 Semester = 2
             };
@@ -52,15 +52,15 @@ namespace StudentMAnager.DAL.Migrations
             var professor = new Professor
             {
                 IsActive = active,
-                FirstName = "Bla",
-                LastName = "Blu",
-                Email = "blablu@zzz.ccc",
+                FirstName = "Ionescu",
+                LastName = "Gabriel",
+                Email = "ionescu.gabriel@gmail.com",
                 Id = professorId,
-                Country = "Laciupakabra",
+                Country = "Romania",
                 BirthDay = DateTime.Parse("01.01.1962"),
-                Address1 = "alt",
-                Address2 = "Kiki",
-                City = "hahaha",
+                Address1 = "Iasi",
+                Address2 = "Salcamilor nr.25",
+                City = "Iasi",
                 Courses = new List<Course> { course }
             };
 
@@ -69,24 +69,94 @@ namespace StudentMAnager.DAL.Migrations
                 Id = studentId,
                 StudentClassId = classId,
                 IsActive = active,
-                FirstName = "Gigi",
-                LastName = "Kent",
-                Email = "GK@bbb.com",
-                Address1 = "Undeva",
-                Address2 = "departe",
+                FirstName = "Popescu",
+                LastName = "Ionut",
+                Email = "ionut.popescu@gmail.com",
+                Address1 = "Iasi",
+                Address2 = "Merilor 25",
                 BirthDay = DateTime.Parse("01.01.1986"),
-                City = "Kentia",
-                Country = "Kentania",
+                City = "Iasi",
+                Country = "Romania",
                 Year = 1,
                 Courses = new List<Course> { course },
                 Grades = new List<Grade> { nine }
             };
+
+            var classId1 = Guid.NewGuid().ToString();
+            var studentId1 = Guid.NewGuid().ToString();
+            var courseId1 = Guid.NewGuid().ToString();
+            var gradeId1 = Guid.NewGuid().ToString();
+            var professorId1 = Guid.NewGuid().ToString();
+
+            var sClass1 = new StudentClass
+            {
+                IsActive = active,
+                Id = classId1,
+                Name = "Group B2"
+            };
+            var course1 = new Course
+            {
+                Year = 1,
+                IsActive = active,
+                Id = courseId1,
+                Name = "Web development",
+                Credits = 5,
+                Semester = 2
+            };
+            var nine1 = new Grade
+            {
+                Id = gradeId1,
+                DateNote = DateTime.Today,
+                Value = 9.5,
+                CourseId = courseId1,
+                StudentId = studentId1,
+            };
+            var professor1 = new Professor
+            {
+                IsActive = active,
+                FirstName = "Sabin",
+                LastName = "Cornelus",
+                Email = "s.cornelus@gmail.com",
+                Id = professorId1,
+                Country = "Romania",
+                BirthDay = DateTime.Parse("01.01.1988"),
+                Address1 = "Iasi",
+                Address2 = "Copou 65",
+                City = "Iasi",
+                Courses = new List<Course> { course1 }
+            };
+
+            var student1 = new Student
+            {
+                Id = studentId1,
+                StudentClassId = classId1,
+                IsActive = active,
+                FirstName = "Stan",
+                LastName = "Alex",
+                Email = "alex.stan@gmail.com",
+                Address1 = "Iasi",
+                Address2 = "Bazei 2.2.p",
+                BirthDay = DateTime.Parse("01.01.1995"),
+                City = "Iasi",
+                Country = "Romania",
+                Year = 1,
+                Courses = new List<Course> { course1 },
+                Grades = new List<Grade> { nine1 }
+            };
+
 
             context.Grades.AddOrUpdate(nine);
             context.Classes.AddOrUpdate(sClass);
             context.Courses.AddOrUpdate(course);
             context.Professors.AddOrUpdate(professor);
             context.Students.AddOrUpdate(student);
+
+
+            context.Grades.AddOrUpdate(nine1);
+            context.Classes.AddOrUpdate(sClass1);
+            context.Courses.AddOrUpdate(course1);
+            context.Professors.AddOrUpdate(professor1);
+            context.Students.AddOrUpdate(student1);
 
         }
     }
